@@ -43,8 +43,10 @@ angular.module('starter.controllers', [])
       {title: 'Cowbell', id: 6}
     ];
 
+    var index = 7;
     $scope.doRefresh = function () {
-      $scope.playlists.unshift({title: "new", id: 9});
+      var i = index++;
+      $scope.playlists.unshift({title: "new" + i, id: i});
       $scope.$broadcast('scroll.refreshComplete');
     }
   })
